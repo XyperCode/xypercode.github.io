@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XyperCode's Website</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
+    <style>
+        h1 {
+          font-size: 4rem;
+        }
+        p {
+          font-size: 1.5rem;
+          text-align: center;
+          width: 70%;
+        }
+        html {
+          overflow-x: clip;
+        }
+        body {
+          margin: 0;
+          font-family: 'Prompt', sans-serif;
+          color: white;
+          background: #202731;
+          overflow-x: clip;
+          width: 100%
+        }
+  
+        section {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-height: 400px;
+          padding-top: 100px;
+        }
+  
+        a {
+            color: #fff9;
+            text-decoration: dotted underline;
+        }
+        
+        a:hover {
+            color: #fff;
+        }
+        
+        code {
+            background: #fff4;
+            border-radius: 5px;
+            padding: 3px 6px;
+        }
+
+        .blue {
+          background: #3c31dd;
+        }
+  
+        .red {
+          background: #dd3f31;
+        }
+  
+        .pink {
+          background: #ff0066;
+          overflow: hidden;
+        }
+  
+        .dark {
+          background: #0f0f10;
+        }
+  
+        /* Curved bg with plain CSS */
+  
+        .curve {
+          position: absolute;
+          height: 250px;
+          width: 100%;
+          bottom: 0;
+          text-align: center;
+        }
+  
+        .curve::before {
+          content: '';
+          display: block;
+          position: absolute;
+          border-radius: 100% 50%;
+          width: 55%;
+          height: 100%;
+          transform: translate(85%, 60%);
+          background-color: hsl(216, 21%, 16%);
+        }
+  
+        .curve::after {
+          content: '';
+          display: block;
+          position: absolute;
+          border-radius: 100% 50%;
+          width: 55%;
+          height: 100%;
+          background-color: #3c31dd;
+          transform: translate(-3.855%, 40%);
+          z-index: -1;
+        }
+  
+        /* Bubble bg with plain CSS */
+  
+        .bubble::after {
+          content: '';
+          border-top-left-radius: 50% 100%;
+          border-top-right-radius: 50% 100%;
+          position: absolute;
+          bottom: 0;
+          z-index: -1;
+          width: 150%;
+          background-color: #0f0f10;
+          height: 85%;
+        }
+  
+        /* Curved bg with SVG via https://www.shapedivider.app/ */
+  
+        .wave {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          overflow: hidden;
+          line-height: 0;
+        }
+  
+        .wave svg {
+          position: relative;
+          display: block;
+          width: calc(103% + 1.3px);
+          height: 262px;
+        }
+  
+        .wave .shape-fill {
+          fill: hsl(240, 3%, 6%);
+        }
+  
+        /* SVG background image via https://haikei.app/ */
+  
+        .spacer {
+          aspect-ratio: 960/300;
+          width: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+  
+        .layer1 {
+          background-image: url('./layer1.svg');
+        }
+        .layer2 {
+          background-image: url('./layer2.svg');
+        }
+  
+        .flip {
+          transform: rotate(180deg);
+        }
+  
+        /* Blobs SVG background image via https://haikei.app/ */
+  
+        .blob-motion {
+          position: absolute;
+          transform: translateY(-20%);
+          z-index: 0;
+        }
+  
+        .blob-content {
+          z-index: 1;
+        }
+  
+        .blobs {
+          width: 100%;
+          background: url('./blobs.svg') no-repeat bottom / cover;
+        }
+
+        .box.dark {
+          border-radius: 20px;
+          background: #0005;
+          padding: 12px 24px;
+        }
+
+        .box.light {
+          border-radius: 32px;
+          background: #fff5;
+          padding: 32px;
+        }
+
+        .smaller-font {
+          font-size: 20px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 18px;
+            height: 18px;
+            background: hsl(216, 21%, 20%);
+        }
+        ::-webkit-scrollbar-button {
+            display: block;
+            position: relative;
+            resize: none;
+            image-resolution: 16px;
+            background-repeat: no-repeat;
+            background: hsl(216, 21%, 10%);
+            background-image: url(scrollbars.png);
+        }
+        ::-webkit-scrollbar-track {
+            background: hsl(216, 21%, 10%);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: hsl(216, 21%, 20%);
+            border-style: solid;
+            border-color: transparent;
+            border-width: 8px;
+            background-clip: content-box;
+            border-radius: 0;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: hsl(216, 21%, 30%);
+            border-width: 7px !important;
+            border-radius: 50vw;
+            width: 3px
+        }
+        ::-webkit-scrollbar-thumb:hover:vertical {
+          max-width: 3px
+        }
+        ::-webkit-scrollbar-thumb:hover:horizontal {
+          max-height: 3px
+        }
+        ::-webkit-scrollbar-button:vertical {
+            background-position-x: -20px;
+        }
+        ::-webkit-scrollbar-button:vertical:hover {
+            background-position-x: -40px;
+            filter: brightness(5)
+        }
+        ::-webkit-scrollbar-button:vertical:disabled {
+            background-position-x: 0;
+        }
+        ::-webkit-scrollbar-button:vertical:decrement {
+            border-width: 0 0 1px 1px;
+            background-position-y: 0;
+        }
+        ::-webkit-scrollbar-button:vertical:increment {
+            border-width: 1px 0 0 1px;
+            background-position-y: -20px;
+        }
+        ::-webkit-scrollbar-button:start:increment,
+        ::-webkit-scrollbar-button:end:decrement {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <section class="blue" style="height: fit-content;">
+      <h1 id="hi-there-">It's Me, XyperCode</h1>
+      <p>
+        I'm XyperCode, a coder who makes things happen!
+      </p>
+      
+      <div class="curve"></div>
+    </section>
+
+    <section>
+      <h1>Hi There 👋</h1>
+      <p class="box dark smaller-font">
+        😄 Pronouns: <code>He/him</code><br>
+        🏢 Owner of <a href="https://github.com/Ultreon">Ultreon Team</a> <br>
+        💻 Favourite OS: <code>Windows 11</code>, <code>Windows 7</code> and <code>Ubuntu</code>.<br>
+        🕓 Timezone: <code>CET/CEST</code> (Central Europe)<br>
+        🔗 Website: <a href="https://xypercode.github.io">xypercode.github.io</a> and <a href="https://ultreon.github.io">ultreon.github.io</a><br>
+      </p>
+    </section>
+
+    <section class="bubble">
+      <h1 id="about-xypercode">About XyperCode</h1>
+      <p>Hello, my name is XyperCode, and I've been coding since 2014.</p>
+      <p>I can now code in C++, Kotlin, Java, Visual Basic, C#, Python, and BASIC.
+        Most of the time, I work on Minecraft modifications, utility software, and sometimes a game called Bubble Blaster.
+      </p>
+    </section>
+
+    <section class="dark">
+      <h1 id="past-and-present">Past and Present</h1>
+      <p>
+        I joined <a href="https://github.com/MultiTeamDevGroup">MultiTeam</a> on April 14th, 2021, and created <a href="https://github.com/Ultreon">Ultreon Team</a> around 2019.
+        Now, I'm working on a variety of projects, including a web browser, text editor, operating system, and Minecraft modifications.
+        Feel free to help with projects (as long it's allowed in the License which it is in <a href="https://github.com/Ultreon">Ultreon Team</a> and from <a href="https://github.com/XyperCode123">my own profile</a>).
+      </p>
+    </section>
+
+    <section class="red">
+      <h1>Ultreon Team</h1>
+      <p>XyperCode's Ultreon Team is a development team. It has been through a lot of name changes; starting from QSoftware, then Qplay Software and the latest one "QTech Community".</p>
+
+      <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <div class="spacer layer1"></div>
+  </body>
+</html>
