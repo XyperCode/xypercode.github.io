@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
     
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 
     <style>
         h1 {
@@ -314,5 +315,17 @@
     </section>
 
     <div class="spacer layer1"></div>
+    <script>
+      document.body.addEventListener("click", function (e) {
+        if (e.target instanceof HTMLLinkElement || e.target instanceof HTMLButtonElement)
+          return;
+        if (e.target instanceof HTMLElement && (e.target.tagName === "A" || e.target.tagName === "BUTTON"))
+          return;
+
+        party.confetti(e);
+      });
+
+      document.body.style.userSelect = "none";
+    </script>
   </body>
 </html>
