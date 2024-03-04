@@ -257,75 +257,93 @@
         ::-webkit-scrollbar-button:end:decrement {
             display: none;
         }
+
+        :root {
+          /* Width is a minimum of 2500px */
+          --virtual-width: calc(max(100vw, 2500px));
+        }
+
+        body {
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+
+        #content {
+          position: relative;
+          left: calc(50vw - var(--virtual-width) / 2);
+          width: var(--virtual-width);
+        }
     </style>
   </head>
   <body>
-    <section class="blue" style="height: fit-content;">
-      <h1 id="hi-there-">It's Me, XyperCode</h1>
-      <p>
-        I'm XyperCode, a coder who makes things happen!
-      </p>
-      
-      <div class="curve"></div>
-    </section>
+    <div id="content">
+      <section class="blue" style="height: fit-content;">
+        <h1 id="hi-there-">It's Me, XyperCode</h1>
+        <p>
+          I'm XyperCode, a coder who makes things happen!
+        </p>
+        
+        <div class="curve"></div>
+      </section>
 
-    <section>
-      <h1>Hi There 👋</h1>
-      <p class="box dark smaller-font">
-        😄 Pronouns: <code>He/him</code><br>
-        🏢 Owner of <a href="https://ultreon.github.io">Ultreon Team</a> <br>
-        💻 Favourite OS: <code>Windows 11</code>, <code>Windows 7</code> and <code>Ubuntu</code>.<br>
-        🕓 Timezone: <code>CET/CEST</code> (Central Europe)<br>
-        🔗 Website: <a href="https://xypercode.github.io">xypercode.github.io</a> and <a href="https://ultreon.github.io">ultreon.github.io</a><br>
-        📺 YouTube: <a href="https://youtube.com/@xypercode">@xypercode</a> and <a href="https://youtube.com/@ultreon">@ultreon</a><br>
-        🐙 GitHub: <a href="https://github.com/XyperCode">@XyperCode</a> and <a href="https://github.com/Ultreon">@Ultreon</a><br>
-        💬 Discord: <a href="https://discord.gg/WePT9v2CmQ">Ultreon HUB</a><br>
-      </p>
-    </section>
+      <section>
+        <h1>Hi There 👋</h1>
+        <p class="box dark smaller-font">
+          😄 Pronouns: <code>He/him</code><br>
+          🏢 Owner of <a href="https://ultreon.github.io">Ultreon Team</a> <br>
+          💻 Favourite OS: <code>Windows 11</code>, <code>Windows 7</code> and <code>Ubuntu</code>.<br>
+          🕓 Timezone: <code>CET/CEST</code> (Central Europe)<br>
+          🔗 Website: <a href="https://xypercode.github.io">xypercode.github.io</a> and <a href="https://ultreon.github.io">ultreon.github.io</a><br>
+          📺 YouTube: <a href="https://youtube.com/@xypercode">@xypercode</a> and <a href="https://youtube.com/@ultreon">@ultreon</a><br>
+          🐙 GitHub: <a href="https://github.com/XyperCode">@XyperCode</a> and <a href="https://github.com/Ultreon">@Ultreon</a><br>
+          💬 Discord: <a href="https://discord.gg/WePT9v2CmQ">Ultreon HUB</a><br>
+        </p>
+      </section>
 
-    <section class="bubble">
-      <h1 id="about-xypercode">About XyperCode</h1>
-      <p>Hello, my name is XyperCode, and I've been coding since 2014.</p>
-      <p>I can now code in C++, Kotlin, Java, Visual Basic, C#, Python, and BASIC.
-        Most of the time, I work on Minecraft modifications, utility software, and sometimes a game called Bubble Blaster.
-      </p>
-    </section>
+      <section class="bubble">
+        <h1 id="about-xypercode">About XyperCode</h1>
+        <p>Hello, my name is XyperCode, and I've been coding since 2014.</p>
+        <p>I can now code in C++, Kotlin, Java, Visual Basic, C#, Python, and BASIC.
+          Most of the time, I work on Minecraft modifications, utility software, and sometimes a game called Bubble Blaster.
+        </p>
+      </section>
 
-    <section class="dark">
-      <h1 id="past-and-present">Past and Present</h1>
-      <p>
-        I joined <a href="https://github.com/MultiTeamDevGroup">MultiTeam</a> on April 14th, 2021, and created <a href="https://github.com/Ultreon">Ultreon Team</a> around 2019.
-        Now, I'm working on a variety of projects, including a web browser, text editor, operating system, and Minecraft modifications.
-        Feel free to help with projects (as long it's allowed in the License which it is in <a href="https://github.com/Ultreon">Ultreon Team</a> and from <a href="https://github.com/XyperCode123">my own profile</a>).
-      </p>
-    </section>
+      <section class="dark">
+        <h1 id="past-and-present">Past and Present</h1>
+        <p>
+          I joined <a href="https://github.com/MultiTeamDevGroup">MultiTeam</a> on April 14th, 2021, and created <a href="https://github.com/Ultreon">Ultreon Team</a> around 2019.
+          Now, I'm working on a variety of projects, including a web browser, text editor, operating system, and Minecraft modifications.
+          Feel free to help with projects (as long it's allowed in the License which it is in <a href="https://github.com/Ultreon">Ultreon Team</a> and from <a href="https://github.com/XyperCode123">my own profile</a>).
+        </p>
+      </section>
 
-    <section class="red">
-      <h1>Ultreon Team</h1>
-      <p>XyperCode's Ultreon Team is a development team. It has been through a lot of name changes; starting from QSoftware, then Qplay Software and the latest one "QTech Community".</p>
+      <section class="red">
+        <h1>Ultreon Team</h1>
+        <p>XyperCode's Ultreon Team is a development team. It has been through a lot of name changes; starting from QSoftware, then Qplay Software and the latest one "QTech Community".</p>
 
-      <div class="wave">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
-    </section>
+        <div class="wave">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </section>
 
-    <div class="spacer layer1"></div>
-    <script>
-      document.body.addEventListener("click", function (e) {
-        if (e.target instanceof HTMLLinkElement || e.target instanceof HTMLButtonElement)
-          return;
-        if (e.target instanceof HTMLElement && (e.target.tagName === "A" || e.target.tagName === "BUTTON"))
-          return;
+      <div class="spacer layer1"></div>
+      <script>
+        document.body.addEventListener("click", function (e) {
+          if (e.target instanceof HTMLLinkElement || e.target instanceof HTMLButtonElement)
+            return;
+          if (e.target instanceof HTMLElement && (e.target.tagName === "A" || e.target.tagName === "BUTTON"))
+            return;
 
-        party.confetti(e);
-      });
+          party.confetti(e);
+        });
 
-      document.body.style.userSelect = "none";
-    </script>
+        document.body.style.userSelect = "none";
+      </script>
+    </div>
   </body>
 </html>
